@@ -1,0 +1,32 @@
+import java.util.*;
+//I was practicing Bubble Sort, Code is written as follows which ran successfully. But when I tried for the first time,  I forgot "If condition" for Swapping. As a result
+//I observed that Arrays are getting reversed completely. It was an accidental learning that Arrays can be reversed using same code as bubble sort,
+// just by removing If condition from it. I dont know if my approach is traditional or no, but it was my first accidental learning so created the repository.
+class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+    int [] arr = {5,4,3,2,1, 8, 9, 66};
+    System.out.println(Arrays.toString(arr));
+
+    for (int k = arr.length - 1; k>=0; k--) {  // I have created this loop so that I can save some time for traversing through array.
+    // for Every k increment, my traversing length reduces by 1, because in bubble sort, with every traversal, last elemet is already sorted, so no need to go till that
+    //last point again. hence, in 1st iteration, this i will traverse completely, in second iteration, last element will not be touched, in third iteration,
+    // second last element will also be not touched and so on. This approach will not reduce the time complexity but it will definitely reduce actual time.
+      for (int i=0; i<k; i++) {
+        int j=i+1;
+         
+
+        if (arr[i]>arr[j]){
+          int temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+          }
+
+        
+      }
+
+      
+    }
+    System.out.println(Arrays.toString(arr));
+  }
+  }
